@@ -1,0 +1,11 @@
+.Header {
+  width: 100%;
+  background: #dddddd;
+  display: flex;
+}
+
+.ticket{
+    background: blue;
+    width: 200px;
+    height: 90px;
+}
