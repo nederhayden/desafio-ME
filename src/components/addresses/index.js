@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./style.css";
+import Card from "./Card.js";
 
 function Addresses(props) {
   const [data, setData] = useState([]);
@@ -12,10 +13,12 @@ function Addresses(props) {
 
   return (
     <div className="Addresses">
-      <h1>ADDRESSES</h1>
-      {data.map((address) => {
-        return <li>{address.name}</li>;
-      })}
+      <h1>Addresses</h1>
+      <div className="cards">
+        {data.map((address) => {
+          return <Card title={address.label} name={address.name}></Card>;
+        })}
+      </div>
     </div>
   );
 }

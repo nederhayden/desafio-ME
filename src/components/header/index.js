@@ -12,20 +12,20 @@ function Header(props) {
 
   return (
     <div className="Header">
-      <h1>HEADER</h1>
+
       <div className="ticket">
-        <h3>Purchase Order</h3>
+        <p>Purchase Order</p>
         <h2>{data.number}</h2>
-        <h5>SerialME {data.serial}</h5>
+        <p>SerialME {data.serial}</p>
       </div>
 
-      {/* <div className="info">
+      <div className="info">
         <h2>{data.buyer}</h2>
-        <p>{data.contact.name}</p>
+        {/* <p>{data.contact.name}</p>
         <p>{data.contact.email}</p>
         <p>{data.contact.phone}</p>
-        <p>{data.contact.fax}</p>
-      </div> */}
+        <p>{data.contact.fax}</p> */}
+      </div>
 
       <div className="price">
         <h2>

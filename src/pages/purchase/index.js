@@ -1,3 +1,4 @@
+import "./style.css";
 import React from "react";
 import Header from "../../components/header";
 import Supplier from "../../components/supplier";

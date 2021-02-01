@@ -12,8 +12,32 @@ function Supplier(props) {
 
   return (
     <div className="Supplier">
-      <h1>SUPPLIER</h1>
-      {data.name}
+      <div id="Column1">
+        <h1>Column1</h1>
+        <h3>Supplier</h3>
+        <div className="Row">
+          <p>{data.name}</p>
+          <div className="Code">
+            <p>Code #{data.code}</p>
+          </div>
+        </div>
+        {/* <p>{data.document.value}</p> */}
+        <p>{data.address}</p>
+      </div>
+
+      <div id="Column2">
+        <h1>Column2</h1>
+        {/* {data.contact.name} */}
+        {/* {data.contact.email} */}
+        {/* {data.contact.phone} */}
+        {/* {data.contact.fax} */}
+      </div>
+
+      <div id="Column3">
+        <h1>Column3</h1>
+        <p>Read: {data.readAt}</p>
+        <p>Last Reply: {data.lastReplyAt}</p>
+      </div>
     </div>
   );
 }
