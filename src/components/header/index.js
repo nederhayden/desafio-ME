@@ -1,41 +1,30 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import "./style.css";
 
-function Header(props) {
-  const [data, setData] = useState({});
-  const url = "https://me-frontend-challenge-api.herokuapp.com/orders/1";
-
-  useEffect(() => {
-    axios.get(url).then((resp) => setData(resp.data.header));
-  }, []);
-
+export default function Header({ headerInfo,}) {
   return (
-    <div className="Header">
-
+    <header className="Header">
       <div className="ticket">
         <p>Purchase Order</p>
-        <h2>{data.number}</h2>
-        <p>SerialME {data.serial}</p>
+        <h2>{headerInfo.number}</h2>
+        <p>SerialME {headerInfo.serial}</p>
       </div>
 
       <div className="info">
-        <h2>{data.buyer}</h2>
-        {/* <p>{data.contact.name}</p>
-        <p>{data.contact.email}</p>
-        <p>{data.contact.phone}</p>
-        <p>{data.contact.fax}</p> */}
+        <h2>{headerInfo.buyer}</h2>
+        <p>{headerInfo.contact.name}</p>
+        <p>{headerInfo.contact.email}</p>
+        <p>{headerInfo.contact.phone}</p>
+        <p>{headerInfo.contact.fax}</p>
       </div>
 
       <div className="price">
         <h2>
-          {data.currency} {data.price}
+          {headerInfo.currency} {headerInfo.price}
         </h2>
-        <h3>{data.status}</h3>
-        <h5>Created on {data.createdAt}</h5>
+        <h3>{headerInfo.status}</h3>
+        <h5>Created on {headerInfo.createdAt}</h5>
       </div>
-    </div>
+    </header>
   );
 }
-
-export default Header;

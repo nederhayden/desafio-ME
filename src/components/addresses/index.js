@@ -4,12 +4,12 @@ import "./style.css";
 import Card from "./Card.js";
 
 function Addresses(props) {
-  const [data, setData] = useState([]);
-  const url = "https://me-frontend-challenge-api.herokuapp.com/orders/1";
+  // const [data, setData] = useState([]);
+  // const url = "https://me-frontend-challenge-api.herokuapp.com/orders/1";
 
-  useEffect(() => {
-    axios.get(url).then((resp) => setData(resp.data.addresses));
-  }, []);
+  // useEffect(() => {
+  //   axios.get(url).then((resp) => setData(resp.data.addresses));
+  // }, []);
 
   return (
     <div className="Addresses">
