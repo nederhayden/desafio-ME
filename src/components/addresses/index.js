@@ -1,26 +1,16 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import "./style.css";
+import React from "react";
 import Card from "./Card.js";
+import { DivAddresses, DivCard } from '../../components/addresses/style'
 
-function Addresses(props) {
-  // const [data, setData] = useState([]);
-  // const url = "https://me-frontend-challenge-api.herokuapp.com/orders/1";
-
-  // useEffect(() => {
-  //   axios.get(url).then((resp) => setData(resp.data.addresses));
-  // }, []);
-
+export default function Addresses({ addressesInfo }) {
   return (
-    <div className="Addresses">
+    <DivAddresses>
       <h1>Addresses</h1>
-      <div className="cards">
-        {data.map((address) => {
+      <DivCard>
+        {addressesInfo.map((address) => {
           return <Card title={address.label} name={address.name}></Card>;
         })}
-      </div>
-    </div>
+      </DivCard>
+    </DivAddresses>
   );
 }
-
-export default Addresses;

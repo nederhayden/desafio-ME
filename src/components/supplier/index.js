@@ -1,45 +1,32 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import "./style.css";
+import React from "react";
+import { DivSupplier, Div1, DivRow, DivCode } from '../../components/supplier/style'
 
-function Supplier(props) {
-  // const [data, setData] = useState({});
-  // const url = "https://me-frontend-challenge-api.herokuapp.com/orders/1";
-
-  // useEffect(() => {
-  //   axios.get(url).then((resp) => setData(resp.data.supplier));
-  // }, []);
-
+export default function Supplier({ supplierInfo }) {
   return (
-    <div className="Supplier">
-      <div id="Column1">
-        <h1>Column1</h1>
+    <DivSupplier>
+      <Div1>
         <h3>Supplier</h3>
-        <div className="Row">
-          <p>{data.name}</p>
-          <div className="Code">
-            <p>Code #{data.code}</p>
-          </div>
-        </div>
-        {/* <p>{data.document.value}</p> */}
-        <p>{data.address}</p>
-      </div>
+        <DivRow>
+          <p>{supplierInfo.name}</p>
+          <DivCode>
+            <p>Code #{supplierInfo.code}</p>
+          </DivCode>
+        </DivRow>
+        <p>{supplierInfo.document.value}</p>
+        <p>{supplierInfo.address}</p>
+      </Div1>
 
       <div id="Column2">
-        <h1>Column2</h1>
-        {/* {data.contact.name} */}
-        {/* {data.contact.email} */}
-        {/* {data.contact.phone} */}
-        {/* {data.contact.fax} */}
+        {supplierInfo.contact.name}
+        {supplierInfo.contact.email}
+        {supplierInfo.contact.phone}
+        {supplierInfo.contact.fax}
       </div>
 
       <div id="Column3">
-        <h1>Column3</h1>
-        <p>Read: {data.readAt}</p>
-        <p>Last Reply: {data.lastReplyAt}</p>
+        <p>Read: {supplierInfo.readAt}</p>
+        <p>Last Reply: {supplierInfo.lastReplyAt}</p>
       </div>
-    </div>
+    </DivSupplier>
   );
 }
-
-export default Supplier;
