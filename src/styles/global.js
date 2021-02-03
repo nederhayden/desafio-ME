@@ -10,9 +10,10 @@ export default createGlobalStyle`
 
 html, body, #root {
     min-height: 100%;
+    border: 1px solid purple;
 }
 
 body{
-    background: #FAEBD7;
+    background: whitesmoke;
 }
 `;
