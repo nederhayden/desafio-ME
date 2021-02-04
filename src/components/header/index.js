@@ -5,15 +5,24 @@ import {
   InfoPerson,
   Price,
   DivTicket,
-  DivPerson,
-  DivPrice,
-  Wrapper
+  DivTicketPerson,
 } from "../../components/header/styles";
 
+import persons from "../../assets/persons.png";
+import email from "../../assets/email.png";
+import fax from "../../assets/fax.png";
+import info from "../../assets/info.png";
+import phone from "../../assets/phone.png";
+
+import moment from "moment";
+
 export default function Header({ headerInfo }) {
+  const date = headerInfo.createdAt;
+  const formattedDate = moment(date).format("L");
+
   return (
     <DivHeader>
-      <Wrapper>
+      <DivTicketPerson>
         <Ticket>
           <DivTicket>
             <h2>Purchase Order</h2>
@@ -23,58 +32,38 @@ export default function Header({ headerInfo }) {
         </Ticket>
 
         <InfoPerson>
-          {/* <DivPerson> */}
           <h1>{headerInfo.buyer}</h1>
 
           <p>
-            <img
-              src="https://www.flaticon.com/svg/vstatic/svg/1040/1040056.svg?token=exp=1612296597~hmac=1ecebc12867d127513da0abfc2d9abfd"
-              alt=""
-            />{" "}
-            {headerInfo.contact.name}{" "}
-            <img
-              src="https://www.flaticon.com/svg/vstatic/svg/157/157933.svg?token=exp=1612296884~hmac=d767015e1169d516f78734c4a14b6fd9"
-              alt=""
-            />
+            <img src={persons} alt="" /> {headerInfo.contact.name}{" "}
+            <img src={info} alt="" />
           </p>
 
           <ul>
             <p>
-              <img
-                src="https://www.flaticon.com/svg/vstatic/svg/520/520648.svg?token=exp=1612296843~hmac=58ea4fcff3f363547056207349f97f59"
-                alt=""
-              />{" "}
-              {headerInfo.contact.email}
+              <img src={email} alt="" /> {headerInfo.contact.email}
             </p>
 
             <p>
-              <img
-                src="https://www.flaticon.com/svg/vstatic/svg/2947/2947981.svg?token=exp=1612296955~hmac=6cdafae1d12cf2fd2cada0081a62d49b"
-                alt=""
-              />{" "}
-              {headerInfo.contact.phone}
+              <img src={phone} alt="" /> {headerInfo.contact.phone}
             </p>
 
             <p>
-              <img
-                src="https://www.flaticon.com/svg/vstatic/svg/2258/2258932.svg?token=exp=1612297009~hmac=a05ad554c3ea13489c78aebeb885061a"
-                alt=""
-              />{" "}
-              {headerInfo.contact.fax}
+              <img src={fax} alt="" /> {headerInfo.contact.fax}
             </p>
           </ul>
-          {/* </DivPerson> */}
         </InfoPerson>
-      </Wrapper>
+      </DivTicketPerson>
 
       <Price>
-        {/* <DivPrice> */}
         <h1>
-          {headerInfo.currency} {headerInfo.price}
+          {headerInfo.currency}{" "}
+          {headerInfo.price.toLocaleString("en-US", {
+            minimumFractionDigits: 2,
+          })}
         </h1>
         <h3>{headerInfo.status}</h3>
-        <h5>Created on {headerInfo.createdAt}</h5>
-        {/* </DivPrice> */}
+        <h5>Created on {formattedDate}</h5>
       </Price>
     </DivHeader>
   );

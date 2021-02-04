@@ -5,10 +5,9 @@ export const DivHeader = styled.div`
   justify-content: space-between;
   margin-top: 12px;
   height: 100px;
-  border: 1px solid purple;
 `;
 
-export const Wrapper = styled.div`
+export const DivTicketPerson = styled.div`
   display: flex;
 `;
 
@@ -19,13 +18,11 @@ export const Ticket = styled.div`
   align-items: center;
   color: white;
   background-color: #028dcd;
-  border: 1px solid purple;
   border-radius: 0px 12px 12px 0px;
   width: 250px;
 `;
 
 export const DivTicket = styled.div`
-  border: 1px solid purple;
   h2 {
     font-size: 26px;
     font-family: Arial, Helvetica, sans-serif;
@@ -44,12 +41,13 @@ export const DivTicket = styled.div`
 `;
 
 export const InfoPerson = styled.div`
-  border: 1px solid purple;
+  margin-left: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   img {
     width: 18px;
+    color: blue
   }
   ul {
     display: flex;
@@ -58,17 +56,11 @@ export const InfoPerson = styled.div`
   }
 `;
 
-// export const DivPerson = styled.div`
-//   background: yellow;
-//   margin-left: 0px;
-// `;
-
 export const Price = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
-  border: 1px solid purple;
+
   text-align: end;
   margin-right: 12px;
 
@@ -76,7 +68,3 @@ export const Price = styled.div`
     color: rgb(210, 138, 30);
   }
 `;
-
-// export const DivPrice = styled.div`
-//   background: green;
-// `;
