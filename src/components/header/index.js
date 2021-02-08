@@ -8,11 +8,11 @@ import {
   DivTicketPerson,
 } from "../../components/header/styles";
 
-import persons from "../../assets/persons.png";
-import email from "../../assets/email.png";
-import fax from "../../assets/fax.png";
-import info from "../../assets/info.png";
-import phone from "../../assets/phone.png";
+import persons from "../../assets/persons.svg";
+import email from "../../assets/email.svg";
+import fax from "../../assets/fax.svg";
+import info from "../../assets/info.svg";
+import phone from "../../assets/phone.svg";
 
 import moment from "moment";
 

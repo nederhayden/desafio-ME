@@ -47,7 +47,6 @@ export const InfoPerson = styled.div`
   justify-content: space-around;
   img {
     width: 18px;
-    color: blue
   }
   ul {
     display: flex;
