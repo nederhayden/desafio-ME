@@ -18,8 +18,7 @@ import { ReactComponent as Phone } from "../../assets/phone.svg";
 import moment from "moment";
 
 export default function Header({ headerInfo }) {
-  const date = headerInfo.createdAt;
-  const formattedDate = moment(date).format("L");
+  const creatDate = moment(headerInfo.createdAt).format("L");
 
   return (
     <DivHeader>
@@ -69,7 +68,7 @@ export default function Header({ headerInfo }) {
           })}
         </h1>
         <h3>{headerInfo.status}</h3>
-        <h5>Created on {formattedDate}</h5>
+        <h5>Created on {creatDate}</h5>
       </Price>
     </DivHeader>
   );

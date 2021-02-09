@@ -2,6 +2,20 @@ import styled from "styled-components";
 
 export const DivAddresses = styled.div`
   margin: 8px;
+  
+  span {
+    display: flex;
+    flex-direction: row;
+    h1{
+      margin-left: 8px;
+    }
+    button {
+      padding: 8px;
+      border: none;
+      border-radius: 20px;
+      background-color: lightblue;
+    }
+  }
 `;
 
 export const DivCard = styled.div`

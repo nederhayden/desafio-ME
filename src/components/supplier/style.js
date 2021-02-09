@@ -70,6 +70,11 @@ export const DivPhoneFax = styled.div`
   }
 `;
 
+export const DivSpan = styled.span`
+  color: ${props => props.color ? props.color : '#000' };
+  margin-left: 5px;
+`;
+
 export const DivContainer3 = styled.div`
   padding: 8px;
   display: flex;
@@ -81,4 +86,10 @@ export const DivContainer3 = styled.div`
   p {
     padding-bottom: 8px;
   }
+`;
+
+export const DivWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
