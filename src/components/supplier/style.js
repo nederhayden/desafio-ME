@@ -58,9 +58,6 @@ export const DivNameEmail = styled.div`
     display: flex;
     flex-direction: row;
   }
-  img {
-    width: 18px;
-  }
   p1 {
     color: #028dcd;
   }
@@ -70,9 +67,6 @@ export const DivPhoneFax = styled.div`
   span {
     display: flex;
     flex-direction: row;
-  }
-  img {
-    width: 18px;
   }
 `;
 

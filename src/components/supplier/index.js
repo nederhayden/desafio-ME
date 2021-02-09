@@ -11,11 +11,12 @@ import {
   DivPhoneFax,
 } from "../../components/supplier/style";
 
-import user from "../../assets/user.svg";
-import phone from "../../assets/phone.svg";
-import fax from "../../assets/fax.svg";
-import eye from "../../assets/eye.svg";
-import backarrow from "../../assets/backarrow.svg";
+// OTIMIZAR ISSO: Descobrir como chamar todos os SVG de uma vez só 
+import { ReactComponent as User } from "../../assets/user.svg";
+import { ReactComponent as Phone } from "../../assets/phone.svg";
+import { ReactComponent as Fax } from "../../assets/fax.svg";
+import { ReactComponent as Eye } from "../../assets/eye.svg";
+import { ReactComponent as Backarrow } from "../../assets/backarrow.svg";
 
 import moment from "moment";
 
@@ -45,18 +46,18 @@ export default function Supplier({ supplierInfo }) {
         <DivNameEmail>
           <span>
             <p>
-              <img src={user} alt="" /> {supplierInfo.contact.name} -{" "}
+              {/* PASSAR A ESTILIZACAO PARA O STYLE: Descobrir como estilizar no styled-component */}
+              <User width="18" height="18"/> {supplierInfo.contact.name} -{" "}
+              <p1>{supplierInfo.contact.email}</p1>
             </p>
-            <p1>{supplierInfo.contact.email}</p1>
           </span>
         </DivNameEmail>
+
         <DivPhoneFax>
           <span>
             <p>
-              <img src={phone} alt="" /> {supplierInfo.contact.phone} -
-            </p>
-            <p>
-              <img src={fax} alt="" /> {supplierInfo.contact.fax}
+              <Phone width="18" height="18"/> {supplierInfo.contact.phone} -{" "}
+              <Fax width="18" height="18"/> {supplierInfo.contact.fax}
             </p>
           </span>
         </DivPhoneFax>
@@ -65,10 +66,10 @@ export default function Supplier({ supplierInfo }) {
       <DivContainer3>
         <span>
           <p>
-            <img src={eye} alt="" /> Read: {formattedDate}
+            <Eye width="18" height="18"/> Read: {formattedDate}
           </p>
           <p1>
-            <img src={backarrow} alt="" /> Last Reply: {formattedDate2}
+            <Backarrow width="18" height="18"/> Last Reply: {formattedDate2}
           </p1>
         </span>
       </DivContainer3>

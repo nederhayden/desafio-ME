@@ -8,11 +8,12 @@ import {
   DivTicketPerson,
 } from "../../components/header/styles";
 
-import persons from "../../assets/persons.svg";
-import email from "../../assets/email.svg";
-import fax from "../../assets/fax.svg";
-import info from "../../assets/info.svg";
-import phone from "../../assets/phone.svg";
+// OTIMIZAR ISSO: Descobrir como chamar todos os SVG de uma vez só 
+import { ReactComponent as Persons } from "../../assets/persons.svg";
+import { ReactComponent as Email } from "../../assets/email.svg";
+import { ReactComponent as Fax } from "../../assets/fax.svg";
+import { ReactComponent as Info } from "../../assets/info.svg";
+import { ReactComponent as Phone } from "../../assets/phone.svg";
 
 import moment from "moment";
 
@@ -35,21 +36,26 @@ export default function Header({ headerInfo }) {
           <h1>{headerInfo.buyer}</h1>
 
           <p>
-            <img src={persons} alt="" /> {headerInfo.contact.name}{" "}
-            <img src={info} alt="" />
+            {/* PASSAR A ESTILIZACAO PARA O STYLE: Descobrir como estilizar no styled-component */}
+            <Persons fill="#028dcd" width="18" height="18" />{" "}
+            {headerInfo.contact.name}{" "}
+            <Info fill="#028dcd" width="18" height="18" />
           </p>
 
           <ul>
             <p>
-              <img src={email} alt="" /> {headerInfo.contact.email}
+              <Email fill="#028dcd" width="18" height="18" />{" "}
+              {headerInfo.contact.email}
             </p>
 
             <p>
-              <img src={phone} alt="" /> {headerInfo.contact.phone}
+              <Phone fill="#028dcd" width="18" height="18" />{" "}
+              {headerInfo.contact.phone}
             </p>
 
             <p>
-              <img src={fax} alt="" /> {headerInfo.contact.fax}
+              <Fax fill="#028dcd" width="18" height="18" />{" "}
+              {headerInfo.contact.fax}
             </p>
           </ul>
         </InfoPerson>
