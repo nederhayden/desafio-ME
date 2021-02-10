@@ -63,7 +63,24 @@ export const Price = styled.div`
   text-align: end;
   margin-right: 12px;
 
-  h3 {
+  h2 {
     color: rgb(210, 138, 30);
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+`;
+
+export const DivSpan = styled.span`
+  color: ${(props) => (props.color ? props.color : "#000")};
+  margin-left: 6px;
+`;
+
+export const DivWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  span {
+    margin-left: 6px;
   }
 `;

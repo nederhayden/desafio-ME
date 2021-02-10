@@ -54,10 +54,15 @@ export default function Supplier({ supplierInfo }) {
 
         <DivPhoneFax>
           <span>
-            <p>
-              <Phone width="18" height="18" /> {supplierInfo.contact.phone} -{" "}
-              <Fax width="18" height="18" /> {supplierInfo.contact.fax}
-            </p>
+            <DivWrapper>
+              <Phone width="18" height="18" />
+              <DivSpan>{`${supplierInfo.contact.phone} - `}</DivSpan>
+
+              <DivSpan>
+                <Fax width="18" height="18" />
+                <DivSpan>{`${supplierInfo.contact.fax}`}</DivSpan>
+              </DivSpan>
+            </DivWrapper>
           </span>
         </DivPhoneFax>
       </DivContainer2>
@@ -66,11 +71,12 @@ export default function Supplier({ supplierInfo }) {
         <span>
           <DivWrapper>
             <Eye width="18" height="18" />
-            {`Read: ${readDate}`}
+            <p>{`Read: ${readDate}`}</p>
           </DivWrapper>
-          <span>
-            <Backarrow width="18" height="18" /> Last Reply: {lastDate}
-          </span>
+          <DivWrapper>
+            <Backarrow width="18" height="18" />
+            <span>{`Last Reply: ${lastDate}`}</span>
+          </DivWrapper>
         </span>
       </DivContainer3>
     </DivSupplier>

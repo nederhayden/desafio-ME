@@ -71,8 +71,8 @@ export const DivPhoneFax = styled.div`
 `;
 
 export const DivSpan = styled.span`
-  color: ${props => props.color ? props.color : '#000' };
-  margin-left: 5px;
+  color: ${(props) => (props.color ? props.color : "#000")};
+  margin-left: 6px;
 `;
 
 export const DivContainer3 = styled.div`
@@ -80,16 +80,16 @@ export const DivContainer3 = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  img {
-    width: 18px;
-  }
   p {
     padding-bottom: 8px;
+    padding-left: 6px;
   }
 `;
 
 export const DivWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  span {
+    margin-left: 6px;
+  }
 `;

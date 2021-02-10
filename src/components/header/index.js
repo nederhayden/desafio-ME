@@ -6,9 +6,11 @@ import {
   Price,
   DivTicket,
   DivTicketPerson,
+  DivSpan,
+  DivWrapper,
 } from "../../components/header/styles";
 
-// OTIMIZAR ISSO: Descobrir como chamar todos os SVG de uma vez só 
+// OTIMIZAR ISSO: Descobrir como chamar todos os SVG de uma vez só
 import { ReactComponent as Persons } from "../../assets/persons.svg";
 import { ReactComponent as Email } from "../../assets/email.svg";
 import { ReactComponent as Fax } from "../../assets/fax.svg";
@@ -27,7 +29,7 @@ export default function Header({ headerInfo }) {
           <DivTicket>
             <h2>Purchase Order</h2>
             <h3>{headerInfo.number}</h3>
-            <p>SerialME {headerInfo.serial}</p>
+            <p>{`SerialME ${headerInfo.serial}`}</p>
           </DivTicket>
         </Ticket>
 
@@ -36,25 +38,35 @@ export default function Header({ headerInfo }) {
 
           <p>
             {/* PASSAR A ESTILIZACAO PARA O STYLE: Descobrir como estilizar no styled-component */}
-            <Persons fill="#028dcd" width="18" height="18" />{" "}
-            {headerInfo.contact.name}{" "}
-            <Info fill="#028dcd" width="18" height="18" />
+            <DivWrapper>
+              <Persons fill="#028dcd" width="18" height="18" />
+              <DivSpan>{headerInfo.contact.name}</DivSpan>
+              <DivSpan>
+                <Info fill="#028dcd" width="18" height="18" />
+              </DivSpan>
+            </DivWrapper>
           </p>
 
           <ul>
             <p>
-              <Email fill="#028dcd" width="18" height="18" />{" "}
-              {headerInfo.contact.email}
+              <DivWrapper>
+                <Email fill="#028dcd" width="18" height="18" />
+                <DivSpan>{headerInfo.contact.email}</DivSpan>
+              </DivWrapper>
             </p>
 
             <p>
-              <Phone fill="#028dcd" width="18" height="18" />{" "}
-              {headerInfo.contact.phone}
+              <DivWrapper>
+                <Phone fill="#028dcd" width="18" height="18" />
+                <DivSpan>{headerInfo.contact.phone}</DivSpan>
+              </DivWrapper>
             </p>
 
             <p>
-              <Fax fill="#028dcd" width="18" height="18" />{" "}
-              {headerInfo.contact.fax}
+              <DivWrapper>
+                <Fax fill="#028dcd" width="18" height="18" />
+                <DivSpan>{headerInfo.contact.fax}</DivSpan>
+              </DivWrapper>
             </p>
           </ul>
         </InfoPerson>
@@ -67,8 +79,8 @@ export default function Header({ headerInfo }) {
             minimumFractionDigits: 2,
           })}
         </h1>
-        <h3>{headerInfo.status}</h3>
-        <h5>Created on {creatDate}</h5>
+        <h2>{headerInfo.status}</h2>
+        <h3>{`Created on ${creatDate}`}</h3>
       </Price>
     </DivHeader>
   );
