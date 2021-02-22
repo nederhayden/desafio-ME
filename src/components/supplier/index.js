@@ -13,7 +13,6 @@ import {
   DivWrapper,
 } from "../../components/supplier/style";
 
-// OTIMIZAR ISSO: Descobrir como chamar todos os SVG de uma vez só
 import { ReactComponent as User } from "../../assets/user.svg";
 import { ReactComponent as Phone } from "../../assets/phone.svg";
 import { ReactComponent as Fax } from "../../assets/fax.svg";
@@ -45,7 +44,6 @@ export default function Supplier({ supplierInfo }) {
       <DivContainer2>
         <DivNameEmail>
           <span>
-            {/* PASSAR A ESTILIZACAO PARA O STYLE: Descobrir como estilizar no styled-component */}
             <User width="18" height="18" />
             <DivSpan>{`${supplierInfo.contact.name} - `}</DivSpan>
             <DivSpan color="#028dcd">{supplierInfo.contact.email}</DivSpan>

@@ -37,7 +37,6 @@ export default function Header({ headerInfo }) {
           <h1>{headerInfo.buyer}</h1>
 
           <p>
-            {/* PASSAR A ESTILIZACAO PARA O STYLE: Descobrir como estilizar no styled-component */}
             <DivWrapper>
               <Persons fill="#028dcd" width="18" height="18" />
               <DivSpan>{headerInfo.contact.name}</DivSpan>

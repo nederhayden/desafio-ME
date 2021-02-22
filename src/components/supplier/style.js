@@ -5,7 +5,6 @@ export const DivSupplier = styled.div`
   padding: 8px;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
-  border: 1px solid steelblue;
   display: flex;
   justify-content: space-between;
 `;
