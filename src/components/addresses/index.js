@@ -1,44 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "./Card.js";
-import { DivAddresses, DivCard } from "../../components/addresses/style";
+import {
+  DivAddresses,
+  DivCard,
+  SpanAddresses,
+} from "../../components/addresses/style";
 
 import { Collapse } from "antd";
-// import { CaretRightOutlined } from "@ant-design/icons";
+import { RightCircleOutlined } from "@ant-design/icons";
 
-import { ReactComponent as DownArrow } from "../../assets/downarrow.svg";
+// import { ReactComponent as DownArrow } from "../../assets/downarrow.svg";
 // import { ReactComponent as UpArrow } from "../../assets/uparrow.svg";
 
 const { Panel } = Collapse;
 
 export default function Addresses({ addressesInfo }) {
-  // const [open, setOpen] = useState(false);
+  function PanelHeaderCustom(header) {
+    return (
+      <span>
+        <SpanAddresses>{header}</SpanAddresses>
+      </span>
+    );
+  }
 
   return (
     <DivAddresses>
-      {/* <span>
-        <button type="button">
-          <DownArrow fill="#028dcd" width="18" height="18" />
-        </button>
-        <h1>Addresses</h1>
-      </span> */}
-
       <Collapse
         defaultActiveKey={["1"]}
         expandIcon={({ isActive }) => (
-          <DownArrow
-            // rotate={isActive ? 90 : 0}
-            fill="#028dcd"
-            width="18"
-            height="18"
+          <RightCircleOutlined
+            rotate={isActive ? 90 : 0}
+            style={{ color: "#028dcd", fontSize: "30px" }}
           />
         )}
-        className="site-collapse-custom-collapse"
       >
-        <Panel
-          header="Addresses"
-          key="1"
-          className="site-collapse-custom-panel"
-        >
+        <Panel header={PanelHeaderCustom("Addresses")} key="1">
           <DivCard>
             {addressesInfo.map((address) => {
               return (
@@ -46,7 +42,7 @@ export default function Addresses({ addressesInfo }) {
                   <Card
                     title={address.label}
                     name={address.name}
-                    code={address.code}
+                    code={address.code ? address.code : ''}
                     address={address.address}
                     name2={address.contact.name}
                     email={address.contact.email}

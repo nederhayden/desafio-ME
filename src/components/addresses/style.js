@@ -2,20 +2,6 @@ import styled from "styled-components";
 
 export const DivAddresses = styled.div`
   margin: 8px;
-
-  span {
-    display: flex;
-    flex-direction: row;
-    h1 {
-      margin-left: 8px;
-    }
-    button {
-      padding: 8px;
-      border: none;
-      border-radius: 20px;
-      background-color: lightblue;
-    }
-  }
 `;
 
 export const DivCard = styled.div`
@@ -25,6 +11,8 @@ export const DivCard = styled.div`
 `;
 
 export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
   padding: 8px;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
@@ -57,4 +45,10 @@ export const DivPadding = styled.span`
 
 export const DivFont = styled.span`
   font-style: italic;
+`;
+
+export const SpanAddresses = styled.span`
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 8px;
 `;

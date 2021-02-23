@@ -17,12 +17,14 @@ import { ReactComponent as Fax } from "../../assets/fax.svg";
 export default (props) => (
   <Card>
     <p>{props.title}</p>
-      <DivRow>
-        <DivSpanName>{`${props.name} - `}</DivSpanName>
-        <DivSpan color="rgba(128, 128, 128, 1)">
-          <DivFont>{`(${props.code})`}</DivFont>
-        </DivSpan>
-      </DivRow>
+    <DivRow>
+      <DivSpanName>
+        {props.code ? `${props.name} - ` : `${props.name}`}
+      </DivSpanName>
+      <DivSpan color="rgba(128, 128, 128, 1)">
+        <DivFont>{props.code ? `(${props.code})` : ""}</DivFont>
+      </DivSpan>
+    </DivRow>
     <DivSpan>
       <LocationPin fill="rgba(128, 128, 128, 1)" width="18" height="18" />
       <DivSpan>{props.address}</DivSpan>
