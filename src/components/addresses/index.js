@@ -9,9 +9,6 @@ import {
 import { Collapse } from "antd";
 import { RightCircleOutlined } from "@ant-design/icons";
 
-// import { ReactComponent as DownArrow } from "../../assets/downarrow.svg";
-// import { ReactComponent as UpArrow } from "../../assets/uparrow.svg";
-
 const { Panel } = Collapse;
 
 export default function Addresses({ addressesInfo }) {
@@ -42,7 +39,7 @@ export default function Addresses({ addressesInfo }) {
                   <Card
                     title={address.label}
                     name={address.name}
-                    code={address.code ? address.code : ''}
+                    code={address.code ? ` - (${address.code})` : ""}
                     address={address.address}
                     name2={address.contact.name}
                     email={address.contact.email}

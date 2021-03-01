@@ -18,11 +18,9 @@ export default (props) => (
   <Card>
     <p>{props.title}</p>
     <DivRow>
-      <DivSpanName>
-        {props.code ? `${props.name} - ` : `${props.name}`}
-      </DivSpanName>
+      <DivSpanName>{props.name}</DivSpanName>
       <DivSpan color="rgba(128, 128, 128, 1)">
-        <DivFont>{props.code ? `(${props.code})` : ""}</DivFont>
+        <DivFont>{props.code}</DivFont>
       </DivSpan>
     </DivRow>
     <DivSpan>

@@ -7,7 +7,7 @@ export const DivAddresses = styled.div`
 export const DivCard = styled.div`
   margin: 8px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 export const Card = styled.div`
